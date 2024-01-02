@@ -13,9 +13,9 @@ class HomeScreen extends StatefulWidget {
 class HomeState extends State<HomeScreen> {
   var diceValue = 1;
 
-  void generateRandomNumber(){
+  void generateRandomNumber() {
     setState(() {
-      diceValue = Random().nextInt(6)+1;
+      diceValue = Random().nextInt(6) + 1;
     });
   }
 
@@ -26,11 +26,23 @@ class HomeState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image: AssetImage("images/dice_$diceValue.png")),
+            Text("$diceValue",
+                style:
+                    const TextStyle(fontSize: 62, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 40),
+            Image(image: AssetImage("assets/images/dice_$diceValue.png")),
             const SizedBox(height: 20),
-            ElevatedButton(child: const Text("Click to Dice And Roll!!"),onPressed: (){
-              generateRandomNumber();
-            })
+            ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.black)),
+              onPressed: () {
+                generateRandomNumber();
+              },
+              child: const Text(
+                "Click to Dice And Roll!!",
+                style: TextStyle(color: Colors.white),
+              ),
+            )
           ],
         ),
       ),
