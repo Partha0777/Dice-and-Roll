@@ -10,6 +10,10 @@ class HomeScreen extends StatefulWidget {
   State<StatefulWidget> createState() => HomeState();
 }
 
+const image = "assets/images/dice_{}.png";
+const imagePlaceHolderValue = "{}";
+const buttonDiceAndRoll = "Click to Dice And Roll!!";
+
 class HomeState extends State<HomeScreen> {
   var diceValue = 1;
 
@@ -30,7 +34,7 @@ class HomeState extends State<HomeScreen> {
                 style:
                     const TextStyle(fontSize: 62, fontWeight: FontWeight.bold)),
             const SizedBox(height: 40),
-            Image(image: AssetImage("assets/images/dice_$diceValue.png")),
+            Image(image: AssetImage(image.replaceAll(imagePlaceHolderValue, diceValue.toString()))),
             const SizedBox(height: 20),
             ElevatedButton(
               style: ButtonStyle(
@@ -39,7 +43,7 @@ class HomeState extends State<HomeScreen> {
                 generateRandomNumber();
               },
               child: const Text(
-                "Click to Dice And Roll!!",
+                buttonDiceAndRoll,
                 style: TextStyle(color: Colors.white),
               ),
             )
