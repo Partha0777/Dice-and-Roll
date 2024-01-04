@@ -8,6 +8,8 @@ void main() {
       debugShowCheckedModeBanner: false, home: SplashWidget()));
 }
 
+const appName = "Dice And Roll!";
+
 class SplashWidget extends StatefulWidget {
   const SplashWidget({super.key});
 
@@ -35,7 +37,7 @@ class SplashStateWidget extends State<SplashWidget> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Dice And Roll!",
+              appName,
               style: TextStyle(fontSize: 24),
             ),
           )
