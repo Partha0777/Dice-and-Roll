@@ -9,6 +9,7 @@ void main() {
 }
 
 const appName = "Dice And Roll!";
+const splashDuration = 2;
 
 class SplashWidget extends StatefulWidget {
   const SplashWidget({super.key});
@@ -21,7 +22,7 @@ class SplashStateWidget extends State<SplashWidget> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: splashDuration), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (con) => const HomeScreen()));
     });
