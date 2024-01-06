@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:copydice/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
+
 void main() {
   runApp(const MaterialApp(
       debugShowCheckedModeBanner: false, home: SplashWidget()));
 }
 
-const appName = "Dice And Roll!";
-const splashDuration = 2;
 
 class SplashWidget extends StatefulWidget {
   const SplashWidget({super.key});

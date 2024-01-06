@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -10,9 +12,7 @@ class HomeScreen extends StatefulWidget {
   State<StatefulWidget> createState() => HomeState();
 }
 
-const image = "assets/images/dice_{}.png";
-const imagePlaceHolderValue = "{}";
-const buttonDiceAndRoll = "Click to Dice And Roll!!";
+
 
 class HomeState extends State<HomeScreen> {
   var diceValue = 1;
