@@ -24,53 +24,60 @@ class HomeState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-      SizedBox.expand(
-        child: Column(
-          children: [
-            Expanded(
-                flex: 3,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text("$diceValue",
-                        style: const TextStyle(
-                            fontSize: 62, fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 40),
-                    Image(
-                        image: AssetImage(image.replaceAll(
-                            imagePlaceHolderValue, diceValue.toString()))),
-                    const SizedBox(height: 20)
-                  ],
-                )),
-            Expanded(
-                flex: 2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.black)),
-                        onPressed: () {
-                          generateRandomNumber();
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            buttonDiceAndRoll,
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
+      body: home()
+    );
+  }
+
+
+  Widget home(){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+            flex: 3,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text("$diceValue",
+                      style: const TextStyle(
+                          fontSize: 62, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 40),
+                  Image(
+                      image: AssetImage(image.replaceAll(
+                          imagePlaceHolderValue, diceValue.toString()))),
+                  const SizedBox(height: 20)
+                ],
+              ),
+            )),
+        Expanded(
+            flex: 2,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                          MaterialStateProperty.all(Colors.black)),
+                      onPressed: () {
+                        generateRandomNumber();
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          buttonDiceAndRoll,
+                          style: TextStyle(color: Colors.white, fontSize: 20),
                         ),
                       ),
-                    )
-                  ],
-                )),
-          ],
-        ),
-      ),
+                    ),
+                  )
+                ],
+              ),
+            )),
+      ],
     );
   }
 }
