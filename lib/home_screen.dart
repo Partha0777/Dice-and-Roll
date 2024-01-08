@@ -12,8 +12,6 @@ class HomeScreen extends StatefulWidget {
   State<StatefulWidget> createState() => HomeState();
 }
 
-
-
 class HomeState extends State<HomeScreen> {
   var diceValue = 1;
 
@@ -26,27 +24,50 @@ class HomeState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body:
+      SizedBox.expand(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("$diceValue",
-                style:
-                    const TextStyle(fontSize: 62, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 40),
-            Image(image: AssetImage(image.replaceAll(imagePlaceHolderValue, diceValue.toString()))),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black)),
-              onPressed: () {
-                generateRandomNumber();
-              },
-              child: const Text(
-                buttonDiceAndRoll,
-                style: TextStyle(color: Colors.white),
-              ),
-            )
+            Expanded(
+                flex: 3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("$diceValue",
+                        style: const TextStyle(
+                            fontSize: 62, fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 40),
+                    Image(
+                        image: AssetImage(image.replaceAll(
+                            imagePlaceHolderValue, diceValue.toString()))),
+                    const SizedBox(height: 20)
+                  ],
+                )),
+            Expanded(
+                flex: 2,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.black)),
+                        onPressed: () {
+                          generateRandomNumber();
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            buttonDiceAndRoll,
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                )),
           ],
         ),
       ),
