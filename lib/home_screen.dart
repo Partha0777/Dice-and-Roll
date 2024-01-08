@@ -31,7 +31,6 @@ class HomeState extends State<HomeScreen> {
 
   Widget home(){
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
             flex: 3,
