@@ -23,13 +23,10 @@ class HomeState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: home()
-    );
+    return Scaffold(body: home());
   }
 
-
-  Widget home(){
+  Widget home() {
     return Column(
       children: [
         Expanded(
@@ -60,7 +57,7 @@ class HomeState extends State<HomeScreen> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor:
-                          MaterialStateProperty.all(Colors.black)),
+                              MaterialStateProperty.all(Colors.black)),
                       onPressed: () {
                         generateRandomNumber();
                       },
