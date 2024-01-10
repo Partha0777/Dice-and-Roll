@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class HomeState extends State<HomeScreen> {
   var diceValue = 1;
+  var list = ["Hello", "How", "What"];
 
   void generateRandomNumber() {
     setState(() {
@@ -42,7 +43,16 @@ class HomeState extends State<HomeScreen> {
                   Image(
                       image: AssetImage(image.replaceAll(
                           imagePlaceHolderValue, diceValue.toString()))),
-                  const SizedBox(height: 20)
+                  const SizedBox(height: 20),
+                  Center(
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                        itemCount: list.length,
+                        itemBuilder: (context, index) {
+                          return Text(list[index]);
+                        }),
+                  )
+
                 ],
               ),
             )),
