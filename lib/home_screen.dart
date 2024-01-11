@@ -43,16 +43,6 @@ class HomeState extends State<HomeScreen> {
                   Image(
                       image: AssetImage(image.replaceAll(
                           imagePlaceHolderValue, diceValue.toString()))),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                        itemCount: list.length,
-                        itemBuilder: (context, index) {
-                          return Text(list[index]);
-                        }),
-                  )
-
                 ],
               ),
             )),
