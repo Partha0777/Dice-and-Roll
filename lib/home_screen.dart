@@ -28,6 +28,7 @@ class HomeState extends State<HomeScreen> {
   }
 
   Widget home() {
+
     return Column(
       children: [
         Expanded(
@@ -46,6 +47,7 @@ class HomeState extends State<HomeScreen> {
                 ],
               ),
             )),
+
         Expanded(
             flex: 2,
             child: Center(
