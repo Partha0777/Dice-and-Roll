@@ -39,7 +39,7 @@ class HomeState extends State<HomeScreen> {
                 children: [
                   Text("$diceValue",
                       style: const TextStyle(
-                          fontSize: 62, fontWeight: FontWeight.bold)),
+                          fontSize: 120, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 40),
                   Image(
                       image: AssetImage(image.replaceAll(
@@ -71,6 +71,29 @@ class HomeState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                  ),
+                  Wrap(
+                    direction: Axis.horizontal,
+                    children:[
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                              MaterialStateProperty.all(Colors.black)),
+                          onPressed: () {
+                            generateRandomNumber();
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              history,
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
                   )
                 ],
               ),
