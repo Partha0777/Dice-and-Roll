@@ -28,7 +28,6 @@ class HomeState extends State<HomeScreen> {
   }
 
   Widget home() {
-
     return Column(
       children: [
         Expanded(
@@ -47,53 +46,53 @@ class HomeState extends State<HomeScreen> {
                 ],
               ),
             )),
-
         Expanded(
             flex: 2,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.black)),
-                      onPressed: () {
-                        generateRandomNumber();
-                      },
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          buttonDiceAndRoll,
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.black)),
+                        onPressed: () {
+                          generateRandomNumber();
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            buttonDiceAndRoll,
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  Wrap(
-                    direction: Axis.horizontal,
-                    children:[
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                              backgroundColor:
-                              MaterialStateProperty.all(Colors.black)),
-                          onPressed: () {
-                            generateRandomNumber();
-                          },
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              history,
-                              style: TextStyle(color: Colors.white, fontSize: 20),
-                            ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.black)),
+                        onPressed: () {
+                          generateRandomNumber();
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            history,
+                            style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
-                      )
-                    ],
+                      ),
+                    ),
                   )
                 ],
               ),
