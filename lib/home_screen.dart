@@ -49,12 +49,13 @@ class HomeState extends State<HomeScreen> {
         Expanded(
             flex: 2,
             child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: double.infinity,
-                    child: Padding(
+              child: Container(
+                margin: const EdgeInsets.all(40),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Padding(
                       padding: const EdgeInsets.all(8),
                       child: ElevatedButton(
                         style: ButtonStyle(
@@ -72,10 +73,7 @@ class HomeState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Padding(
+                    Padding(
                       padding: const EdgeInsets.all(8),
                       child: ElevatedButton(
                         style: ButtonStyle(
@@ -92,9 +90,9 @@ class HomeState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             )),
       ],
