@@ -11,8 +11,12 @@ class History extends StatefulWidget {
 class HistoryState extends State<History> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(),
+    return Scaffold(
+      body: Center(
+        child: Container(
+
+        ),
+      ),
     );
   }
 }
