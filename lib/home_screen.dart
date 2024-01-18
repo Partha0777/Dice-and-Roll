@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
@@ -15,10 +16,13 @@ class HomeScreen extends StatefulWidget {
 class HomeState extends State<HomeScreen> {
   var diceValue = 1;
   var list = ["Hello", "How", "What"];
+  List<int> historyList = [];
 
   void generateRandomNumber() {
     setState(() {
       diceValue = Random().nextInt(6) + 1;
+      historyList.add(diceValue);
+      print(historyList);
     });
   }
 
