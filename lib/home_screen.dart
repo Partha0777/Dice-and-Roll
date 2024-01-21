@@ -1,6 +1,8 @@
 import 'dart:ffi';
+import 'dart:html';
 import 'dart:math';
 
+import 'package:copydice/history.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +28,13 @@ class HomeState extends State<HomeScreen> {
     });
   }
 
+  void collectData(String data){
+
+  }
+
   @override
   Widget build(BuildContext context) {
+    var history = History(historyList: [], history : collectData);
     return Scaffold(body: home());
   }
 
