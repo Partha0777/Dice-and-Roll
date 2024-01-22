@@ -1,5 +1,4 @@
-import 'dart:ffi';
-import 'dart:html';
+
 import 'dart:math';
 
 import 'package:copydice/history.dart';
@@ -91,7 +90,9 @@ class HomeState extends State<HomeScreen> {
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.black)),
                         onPressed: () {
-                          generateRandomNumber();
+                         Navigator.push(context,MaterialPageRoute(builder: (context) {
+                           return History(historyList: historyList, history: collectData);
+                         }));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),

@@ -24,10 +24,13 @@ class HistoryState extends State<History> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Container(
-
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text("History")
+          ],
         ),
       ),
     );
