@@ -1,3 +1,4 @@
+import 'package:copydice/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,7 @@ class HistoryState extends State<History> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("History")
+            Text(history,style: TextStyle(fontSize: 20),)
           ],
         ),
       ),
