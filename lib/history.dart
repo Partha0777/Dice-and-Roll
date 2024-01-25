@@ -17,12 +17,12 @@ class History extends StatefulWidget {
 }
 
 class HistoryState extends State<History> {
-
   @override
   void initState() {
     super.initState();
     widget.history("");
   }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -30,10 +30,19 @@ class HistoryState extends State<History> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(history,style: TextStyle(fontSize: 20),)
+            Text(
+              history,
+              style: TextStyle(fontSize: 20),
+            )
           ],
         ),
       ),
+    );
+  }
+
+  Widget historyItem(String data) {
+    return Row(
+      children: [Text(data)],
     );
   }
 }
